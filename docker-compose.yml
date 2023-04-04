@@ -3,6 +3,12 @@ version: '3'
 services:
   nodejs:
     #fill out the configuration here
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: test
+    container_name: test
+    restart: unless-stopped
     networks:
       - app-network
   
@@ -28,7 +34,7 @@ volumes:
     driver_opts:
       type: none
       #fill out your absolute path to your folder here
-      device: /absolute/path/to/web/template/folder
+      device: E:\UMD Spring 2023\CMSC 389T\Project 5\cmsc389T-Project-5
       o: bind
 
 networks:

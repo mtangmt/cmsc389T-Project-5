@@ -1,5 +1,5 @@
 name: update workflow
-on: 
+on:
   push:
     branches: [main]
 jobs:
@@ -10,10 +10,11 @@ jobs:
       - name: testing
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }} 
+          host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-              cd cmsc389T-Project-5
-              git pull
+            cd ../pub
+            cd cmsc389T-Project-5
+            git pull
